@@ -1,0 +1,102 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd"
+>
+
+
+
+<bean name = "p1" class= "com.iiht.iocday2b"  >
+	
+	<constructor-arg name = "x" value ="1"></constructor-arg>
+	<constructor-arg name = "y" value ="2"></constructor-arg>	
+	
+</bean>
+
+
+<bean name = "p2" class= "com.iiht.iocday2b"  >
+	
+	<constructor-arg name = "x" value ="1"></constructor-arg>
+	<constructor-arg name = "y" value ="2"></constructor-arg>	
+	
+</bean>
+
+
+<bean name = "line" class= "com.iiht.iocday2b" autowire="byName"  >
+
+</bean>
+
+
+
+<bean name = "rect" class="com.iiht.iocday2.Rectangle" scope="prototype" init-method="init" destroy-method="destroy" > 
+	<constructor-arg name = "length" value ="15"></constructor-arg>
+	<constructor-arg name = "breadth" value ="23"></constructor-arg>	
+</bean>
+
+
+<bean name = "tria" class="com.iiht.iocday2.Triangle" > 
+	<constructor-arg name = "base" value ="10"></constructor-arg>
+	<constructor-arg name = "height" value ="25"></constructor-arg>	
+</bean>
+
+<bean name = "rhomb" class = "com.iiht.iocday2.Rhombus">
+	
+	<constructor-arg name = "diagonal1" value ="10"></constructor-arg>
+	<constructor-arg name = "diagonal2" value ="10"></constructor-arg>	
+	
+</bean>
+
+
+<bean  name="a1" class="com.iiht.ioc.A">
+	<constructor-arg name = "name" value ="john doe"></constructor-arg>
+	<constructor-arg name = "gender" value ="male"></constructor-arg>
+	
+</bean>
+
+<bean  name="a2" class="com.iiht.ioc.A">
+	<property name = "name" value ="jane doe"></property>
+	<property name = "gender" value ="female"></property>
+	
+</bean>
+
+<bean  name="a3" class="com.iiht.ioc.A">
+	<property name = "name" value ="janet doe"></property>
+	<property name = "gender" value ="female"></property>
+	
+</bean>
+
+
+<bean  name="a4" class="com.iiht.ioc.A">
+	<property name = "name" value ="james doe"></property>
+	<property name = "gender" value ="male"></property>
+	
+</bean>
+
+
+
+
+<bean name="javaTeam" class="com.iiht.ioc.Members" scope="" init-method="init" autowire="constructor">
+	
+	<!--<constructor-arg>
+		<list>
+			<ref bean="a1"/>
+			<ref bean="a2"/>
+			
+		</list>
+		
+	
+	</constructor-arg>
+	
+	<property name="members">
+		<list>
+			<ref bean="a3"/>
+			<ref bean="a4"/>
+			
+		</list>
+		
+		
+	</property>
+-->
+</bean>
+
+</beans>
